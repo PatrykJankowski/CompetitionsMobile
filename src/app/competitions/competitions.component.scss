@@ -1,0 +1,58 @@
+.container {
+    position: relative;
+}
+  
+.container::before {
+    content: '';
+    position: fixed;
+    top: 6rem;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    height: 9.5rem;
+    background: linear-gradient(270deg, #087AFF 38.5%, #A3FFE3 98.16%);
+    opacity: 0.85;
+    filter: blur(89.5px);
+}
+
+.title {
+    font-family: 'Poppins', sans-serif;
+    color: #FFF;
+    font-size: 1.375rem;
+    font-weight: 600;
+    opacity: .5;
+}
+
+.plus-button {
+    width: 3.125rem;
+    height: 3.125rem;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #087AFF, #72EAB5);
+    position: fixed;
+    bottom: 1.25rem;
+    right: 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    .plus {
+        color: white;
+        font-size: 2rem;
+        position: relative;
+    }
+}
+
+.notification {
+    position: fixed;
+    bottom: 1rem;
+    left: 1.31rem;
+    width: calc(200px);
+    background-color: rgb(169, 169, 1);
+    color: white;
+    font-size: .8rem;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+}

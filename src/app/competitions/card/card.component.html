@@ -1,0 +1,37 @@
+<div class="card">
+    <div class="upper-container">
+        <div class="avatars">
+            <img [src]="image" class="participant" *ngFor="let image of statistics.participantsImages">
+            <div class="rest"><span class="number">{{ statistics.participants }}</span></div>
+        </div>
+        <div class="info" *ngIf="statistics.hasEnded">Too late to join</div>
+    </div>
+
+    <h2 class="title" [ngClass]="{'even': index % 2 === 1}">{{ statistics.title }}</h2>
+    <item *ngFor="let data of statistics.statistics; let i = index" [data]="data" [currentIndex]="i"></item>
+
+    <div class="additional-info">
+        <div class="wrapper">
+            <img class="image" src="{{ statistics.userImgPath }}">
+            <div>
+                <div class="upper-text">{{ statistics.userName }}</div>
+                <div class="lower-text">{{ statistics.userId }}</div>
+            </div>
+        </div>
+        <div class="wrapper">
+            <img class="image" src="../../../assets/prize.svg">
+            <div>
+                <div class="upper-text">{{ statistics.prize }}</div>
+                <div class="lower-text">&#64;xBits prize</div>
+            </div>
+        </div>
+        <div class="wrapper">
+            <div class="circle">{{ statistics.days }}</div>
+            <div>
+                <div class="upper-text red">Days</div>
+                <div class="lower-text red">past</div>
+            </div>
+        </div>
+    </div>
+    <button type="button" class="view-btn" (click)="showNotification()">View</button>
+</div>

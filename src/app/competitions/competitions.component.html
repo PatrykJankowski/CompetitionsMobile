@@ -1,0 +1,15 @@
+<div class="container">
+    <header class="header">
+      <user></user>
+      <h1 class="title">Competitions</h1>
+    </header>
+    <card *ngFor="let statistic of statistics; let i = index" [index]="i" [statistics]="statistic"></card>
+</div>
+
+<div role="button" class="plus-button" (click)="showNotification()">
+  <div class="plus">+</div>
+</div>
+
+<div *ngIf="notificationService.notification$ | async as notification" class="notification">
+  {{ notification }}
+</div>

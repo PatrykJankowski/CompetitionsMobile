@@ -1,0 +1,12 @@
+<div class="card">
+    <div class="avatar">
+        <span class="letters">{{ user.firstname | slice:0:1 }}{{ user.lastname | slice:0:1 }}</span>
+    </div>
+    <div class="data">
+        <div class="user-wrapper">
+            <div class="name">{{ user.firstname }} {{ user.lastname }}</div>
+            <div class="stats"><img src="../../../assets/xbits.svg"> {{ user.xbits }} <img src="../../../assets/crown.svg">{{ user.rate }}</div>
+        </div>
+        <div role="button" class="add-user" (click)="showNotification()"><img src="../../../assets/user.svg"></div>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+<div class="card" [class.negative]="!data.positive" (click)="showNotification()">
+    <div class="position-container p{{ currentIndex + 1 }}" [ngClass]="{'even': currentIndex % 2 === 1}">
+        <span class="position">{{ currentIndex + 1 }}<sup>{{ getSuffix(currentIndex + 1) }}</sup></span>
+        <img class="avatar" [src]="data.imgPath">
+    </div>
+    <div class="content">
+        <h3 class="name">
+            {{ data.name }}
+            <img class="verified" *ngIf="data.verified" src="../../../../assets/verified.svg" alt="Verified Icon">
+        </h3>
+        
+        <div class="data-wrapper">
+            <div class="data-item">
+                <div class="data">{{ data.alerts }}</div>
+                <div class="description">Alerts</div>
+            </div>
+            <div class="data-item">
+                <div class="data">{{ data.winRate }}</div>
+                <div class="description">Win Rate</div>
+            </div>
+            <div class="data-item">
+                <div class="data">{{ data.yield }}</div>
+                <div class="description">Yield</div>
+            </div>
+            <div class="result" [class.negative]="!data.positive">
+                <div class="amount">{{ data.amount }}</div>
+                <div class="change">{{ data.change }}</div>
+            </div>
+        </div>
+    </div>
+</div>
